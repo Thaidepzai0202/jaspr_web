@@ -26,11 +26,13 @@ class Header extends StatelessComponent {
               (label: 'Services', path: '/'),
               (label: 'Contact', path: '/'),
               (label: 'Careers', path: '/'),
-              (label: 'English', path: '/about'),
             ])
-              div(classes: activePath == route.path ? 'active' : null, [
+              div([
                 Link(to: route.path, child: text(route.label)),
               ]),
+            div(classes: "language-header", [
+              Link(to: '/about', child: text("Enslish")),
+            ]),
           ]),
         ])
       ]),
@@ -39,7 +41,8 @@ class Header extends StatelessComponent {
 
   @css
   static final styles = [
-    css('@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");'),
+    css.import(
+        "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"),
 
     css('.header-container', [
       css('&').styles(
@@ -48,39 +51,50 @@ class Header extends StatelessComponent {
     ]),
     css('.head_padding').styles(
       display: Display.flex,
+      height: 68.px,
       // width: Unit.vw(100),
-      padding: Padding.symmetric(
-          vertical: Unit.pixels(66), horizontal: Unit.pixels(100)),
+      padding: Padding.only(top: 66.px, left: 100.px, right: 100.px),
       flexDirection: FlexDirection.row,
       justifyContent: JustifyContent.spaceBetween,
+      alignItems: AlignItems.center,
     ),
     // Style cho menu
-    css('.nav-menu', [
+    css('.nav-menu a', [
+      css('&').styles(
+        color: Colors.black,
+        fontFamily: FontFamily.list(
+            [FontFamily("Space Grotesk"), FontFamilies.andaleMono]),
+        fontSize: 20.px,
+        fontWeight: FontWeight.w400,
+        textDecoration: TextDecoration.none,
+      ),
+    ]),
+    css('.nav-menu ', [
       css('&').styles(
         display: Display.flex,
-        fontFamily: FontFamily('Space Grotesk'),
-        fontSize: 1.2.em,
-        fontWeight: FontWeight.w500,
       ),
     ]),
-
+    css('.language-header', [
+      css('&').styles(
+        display: Display.flex,
+        height: 68.px,
+        border: Border.all(BorderSide(color: Colors.black, width: 1.px)),
+        radius: BorderRadius.circular(14.px),
+        alignItems: AlignItems.center,
+        color: Colors.black,
+        fontFamily: FontFamily.list(
+            [FontFamily("Space Grotesk"), FontFamilies.andaleMono]),
+        fontSize: 20.px,
+        fontWeight: FontWeight.w400,
+        textDecoration: TextDecoration.none,
+      )
+    ]),
     css('.nav-menu div', [
       css('&').styles(
-        padding: Padding.symmetric(horizontal: 1.em),
-      ),
-    ]),
-
-    // Hiệu ứng khi active
-    css('.active', [
-      css('&').styles(position: const Position.relative()),
-      css('&::before').styles(
-        content: '',
-        display: Display.block,
-        position: Position.absolute(bottom: 0.5.em, left: 20.px, right: 20.px),
-        height: 2.px,
-        radius: BorderRadius.circular(1.px),
-        backgroundColor: Colors.white,
-      ),
+        padding: Padding.symmetric(horizontal: 20.px),
+        display: Display.flex,
+        alignItems: AlignItems.center
+        ),
     ]),
   ];
 }
