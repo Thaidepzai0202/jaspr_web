@@ -1,5 +1,4 @@
 import 'package:jaspr/jaspr.dart';
-
 import '../constants/theme.dart';
 import 'embedded_counter.dart';
 

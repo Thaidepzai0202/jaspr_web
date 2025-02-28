@@ -2,11 +2,14 @@
 // Generated with jaspr_builder
 
 import 'package:jaspr/jaspr.dart';
-import 'package:my_website/components/counter.dart' as prefix0;
-import 'package:my_website/components/header.dart' as prefix1;
-import 'package:my_website/pages/about.dart' as prefix2;
-import 'package:my_website/pages/home.dart' as prefix3;
-import 'package:my_website/app.dart' as prefix4;
+import 'package:my_website/components/common/button_primary_black.dart' as prefix0;
+import 'package:my_website/components/home_page/header_home_page.dart' as prefix1;
+import 'package:my_website/components/home_page/list_logo.dart' as prefix2;
+import 'package:my_website/components/counter.dart' as prefix3;
+import 'package:my_website/components/header.dart' as prefix4;
+import 'package:my_website/pages/about.dart' as prefix5;
+import 'package:my_website/pages/home.dart' as prefix6;
+import 'package:my_website/app.dart' as prefix7;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -26,13 +29,16 @@ import 'package:my_website/app.dart' as prefix4;
 /// ```
 final defaultJasprOptions = JasprOptions(
   clients: {
-    prefix2.About: ClientTarget<prefix2.About>('pages/about'),
-    prefix3.Home: ClientTarget<prefix3.Home>('pages/home'),
+    prefix5.About: ClientTarget<prefix5.About>('pages/about'),
+    prefix6.Home: ClientTarget<prefix6.Home>('pages/home'),
   },
   styles: () => [
-    ...prefix0.CounterState.styles,
-    ...prefix1.Header.styles,
-    ...prefix2.About.styles,
-    ...prefix4.App.styles,
+    ...prefix0.ButtonPrimaryBlack.styles,
+    ...prefix1.HeaderHomePageState.styles,
+    ...prefix2.ListLogo.styles,
+    ...prefix3.CounterState.styles,
+    ...prefix4.Header.styles,
+    ...prefix5.About.styles,
+    ...prefix7.App.styles,
   ],
 );

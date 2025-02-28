@@ -1,4 +1,7 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:my_website/components/common/title_icon_home.dart';
+import 'package:my_website/components/home_page/header_home_page.dart';
+import 'package:my_website/components/home_page/list_logo.dart';
 
 import '../components/counter.dart';
 
@@ -16,7 +19,6 @@ class Home extends StatefulComponent {
 }
 
 class HomeState extends State<Home> {
-
   @override
   void initState() {
     super.initState();
@@ -36,24 +38,27 @@ class HomeState extends State<Home> {
     yield div(
         // classes: ,
         [
-      img(src: 'images/logo.svg', width: 80),
-      h1([text('Welcome')]),
-      p([text('You successfully create a new Jaspr site.')]),
-      div(styles: Styles(height: 100.px), []),
-      const Counter(),
-      div(styles: Styles(height: 100.px), []),
-      const Counter(),
-      div(styles: Styles(height: 100.px), []),
-      const Counter(),
-      div(styles: Styles(height: 100.px), []),
-      const Counter(),
-      div(styles: Styles(height: 100.px), []),
-      const Counter(),
-      div(styles: Styles(height: 100.px), []),
-      const Counter(),
-      div(styles: Styles(height: 100.px), []),
-      const Counter(),
-      div(styles: Styles(height: 100.px), []),
-    ]);
+          HeaderHomePage(),
+          ListLogo(),
+          TitleIconHome(title: "Service gg",content: "Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies"),
+          div(styles: Styles(height: 1000.px), []),
+          img(src: 'images/logo.svg', width: 80),
+          h1([text('Welcome')]),
+          p([text('You successfully create a new Jaspr site.')]),
+          const Counter(),
+          div(styles: Styles(height: 100.px), []),
+          const Counter(),
+          div(styles: Styles(height: 100.px), []),
+          const Counter(),
+          div(styles: Styles(height: 100.px), []),
+          const Counter(),
+          div(styles: Styles(height: 100.px), []),
+          const Counter(),
+          div(styles: Styles(height: 100.px), []),
+          const Counter(),
+          div(styles: Styles(height: 100.px), []),
+          const Counter(),
+          div(styles: Styles(height: 100.px), []),
+        ]);
   }
 }

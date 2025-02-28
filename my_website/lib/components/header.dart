@@ -1,5 +1,6 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:my_website/constants/app_colors.dart';
 import 'package:my_website/constants/image_constant.dart';
 
 import '../constants/theme.dart';
@@ -31,7 +32,7 @@ class Header extends StatelessComponent {
                 Link(to: route.path, child: text(route.label)),
               ]),
             div(classes: "language-header", [
-              Link(to: '/about', child: text("Enslish")),
+              Link(to: '/about', child: text("English")),
             ]),
           ]),
         ])
@@ -61,13 +62,13 @@ class Header extends StatelessComponent {
     // Style cho menu
     css('.nav-menu a', [
       css('&').styles(
-        color: Colors.black,
-        fontFamily: FontFamily.list(
-            [FontFamily("Space Grotesk"), FontFamilies.andaleMono]),
-        fontSize: 20.px,
-        fontWeight: FontWeight.w400,
-        textDecoration: TextDecoration.none,
-      ),
+          margin: Margin.symmetric(horizontal: 20.px),
+          color: Colors.black,
+          fontFamily: FontFamily.list(
+              [FontFamily("Space Grotesk"), FontFamilies.andaleMono]),
+          fontSize: 20.px,
+          fontWeight: FontWeight.w400,
+          textDecoration: TextDecoration.none),
     ]),
     css('.nav-menu ', [
       css('&').styles(
@@ -78,10 +79,12 @@ class Header extends StatelessComponent {
       css('&').styles(
         display: Display.flex,
         height: 68.px,
-        border: Border.all(BorderSide(color: Colors.black, width: 1.px)),
+        padding: Padding.symmetric(horizontal: 15.px),
+        border:
+            Border.all(BorderSide(color: AppColors.primaryColor, width: 1.px)),
         radius: BorderRadius.circular(14.px),
         alignItems: AlignItems.center,
-        color: Colors.black,
+        color: AppColors.primaryColor,
         fontFamily: FontFamily.list(
             [FontFamily("Space Grotesk"), FontFamilies.andaleMono]),
         fontSize: 20.px,
@@ -90,11 +93,7 @@ class Header extends StatelessComponent {
       )
     ]),
     css('.nav-menu div', [
-      css('&').styles(
-        padding: Padding.symmetric(horizontal: 20.px),
-        display: Display.flex,
-        alignItems: AlignItems.center
-        ),
+      css('&').styles(display: Display.flex, alignItems: AlignItems.center),
     ]),
   ];
 }
