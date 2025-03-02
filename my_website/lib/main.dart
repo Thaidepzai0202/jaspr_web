@@ -25,6 +25,9 @@ void main() {
   runApp(Document(
     title: 'my_website',
     styles: [
+      css.import(
+        "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"),
+    
       // Special import rule to include to another css file.
       css.import('https://fonts.googleapis.com/css?family=Roboto'),
       // Each style rule takes a valid css selector and a set of styles.
@@ -34,7 +37,7 @@ void main() {
         minHeight: 100.vh,
         padding: Padding.zero,
         margin: Margin.zero,
-        fontFamily: const FontFamily.list([FontFamily('Roboto'), FontFamilies.sansSerif]),
+        fontFamily: const FontFamily.list([FontFamily('Space Grotesk'), FontFamilies.sansSerif]),
       ),
       css('h1').styles(
         margin: Margin.unset,
