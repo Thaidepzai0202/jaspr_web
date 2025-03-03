@@ -1,6 +1,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:my_website/components/common/size_box_component.dart';
 import 'package:my_website/constants/app_colors.dart';
+import 'package:my_website/constants/image_constant.dart';
 
 class ContactUsBlock extends StatefulComponent {
   const ContactUsBlock({super.key});
@@ -13,6 +14,7 @@ class GenderSelectionState extends State<ContactUsBlock> {
   int numSelected = 1;
   String textValue = '';
   String emailValue = '';
+  String messageValue = '';
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
@@ -20,9 +22,17 @@ class GenderSelectionState extends State<ContactUsBlock> {
         styles: Styles(
             margin: Margin.symmetric(horizontal: 100.px),
             radius: BorderRadius.circular(45.px),
+            display: Display.flex,
+            flexDirection: FlexDirection.row,
+            alignItems: AlignItems.center,
+            justifyContent: JustifyContent.spaceBetween,
             backgroundColor: AppColors.backgroundWhite),
         [
           _detailComponent(),
+          img(
+              // styles: Styles(height: 100.percent),
+              src: Images.imageContactUsCard,
+              height: 550)
         ]);
   }
 
@@ -50,6 +60,7 @@ class GenderSelectionState extends State<ContactUsBlock> {
               [Text("name")])
         ]);
   }
+
   Component _emailInput() {
     return div(
         styles: Styles(
@@ -75,11 +86,44 @@ class GenderSelectionState extends State<ContactUsBlock> {
         ]);
   }
 
+  Component _messageInput() {
+    return div(
+      styles: Styles(
+        display: Display.flex,
+        height: 223.px,
+        flexDirection: FlexDirection.column,
+        justifyContent: JustifyContent.spaceBetween,
+      ),
+      [
+        Text("Message*"),
+        SizeBoxComponent(height: 6),
+        textarea(
+            // value: messageValue,
+            onInput: (e) => setState(() => messageValue = e ?? ''),
+            styles: Styles(
+              height: 170.px,
+              raw: {'resize': 'none'},
+              padding: Padding.symmetric(horizontal: 30.px, vertical: 18.px),
+              radius: BorderRadius.circular(14.px),
+              color: AppColors.primaryColor,
+              border: Border(color: AppColors.primaryColor, width: 1.px),
+              fontSize: 18.px,
+              fontWeight: FontWeight.w400,
+              backgroundColor: AppColors.white,
+              // resize: Resize.none, // Chặn resize nếu không muốn người dùng thay đổi kích thước
+            ),
+            readonly: false,
+            required: true,
+            []),
+      ],
+    );
+  }
+
   Component _detailComponent() {
     return div(
         styles: Styles(
             width: 45.percent,
-            height: 650.px,
+            // height: 650.px,
             padding: Padding.only(top: 60.px, bottom: 60.px, left: 100.px)),
         [
           div(
@@ -102,6 +146,8 @@ class GenderSelectionState extends State<ContactUsBlock> {
           _nameInput(),
           SizeBoxComponent(height: 25),
           _emailInput(),
+          SizeBoxComponent(height: 25),
+          _messageInput(),
         ]);
   }
 
