@@ -18,6 +18,7 @@ class Images {
   static const String ctaBlockImage = "images/cta_block_image.png";
   static const String learnMoreGreenIcon = "images/learn_more_green_icon.svg";
   static const String memberTeam = "images/member_team.png";
+  static const String imageContactUsCard = "images/image_contact_us_card.png";
 }
 
 class Icons {

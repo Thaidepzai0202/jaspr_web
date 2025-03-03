@@ -18,23 +18,22 @@ class OurService extends StatelessComponent {
           div(
               styles: Styles(
                   // width: 100.percent,
-                  padding: Padding.symmetric(horizontal: 100.px),
                   display: Display.flex,
+                  padding: Padding.symmetric(horizontal: 100.px),
                   flexDirection: FlexDirection.column),
               [
                 for (var i = 0; i < listService.length / 2; i++)
                   div([
                     div(
-                      [
+                      styles: Styles(
+                          display: Display.flex,
+                          flexDirection: FlexDirection.row,
+                          justifyContent: JustifyContent.spaceAround),
+                    [
                         listService[i * 2],
                         SizeBoxComponent(width: 20),
                         listService[i * 2 + 1],
-                      ],
-                      styles: Styles(
-                          justifyContent: JustifyContent.spaceAround,
-                          display: Display.flex,
-                          flexDirection: FlexDirection.row),
-                    ),
+                      ]),
                     SizeBoxComponent(height: 40)
                   ])
               ])

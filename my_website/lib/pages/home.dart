@@ -1,6 +1,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:my_website/components/common/title_icon_home.dart';
 import 'package:my_website/components/home_page/case_studies_block.dart';
+import 'package:my_website/components/home_page/contact_us_block.dart';
 import 'package:my_website/components/home_page/cta_block.dart';
 import 'package:my_website/components/home_page/group_of_card.dart';
 import 'package:my_website/components/home_page/header_home_page.dart';
@@ -67,6 +68,10 @@ class HomeState extends State<Home> {
               title: 'Team',
               content: 'Meet the skilled and experienced team behind our successful digital marketing strategies'),
           GroupOfCard(),
+          TitleIconHome(
+              title: 'Contact Us',
+              content: '''Connect with Us: Let's Discuss Your Digital Marketing Needs'''),
+          ContactUsBlock(),
 
 
           div(styles: Styles(height: 1000.px), []),

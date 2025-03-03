@@ -1,4 +1,5 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:my_website/components/common/button_primary_black.dart';
 import 'package:my_website/components/common/size_box_component.dart';
 import 'package:my_website/constants/app_colors.dart';
 
@@ -20,14 +21,14 @@ class MemberCard extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
         styles: Styles(
+            width: 30.percent,
             height: 250.px,
-            width: 310.px,
+            padding: Padding.symmetric(horizontal: 35.px, vertical: 40.px),
             border: Border(color: AppColors.primaryColor, width: 1.px),
             radius: BorderRadius.circular(45.px),
             shadow: BoxShadow(
-                offsetX: 0.px, offsetY: 5.px, color: AppColors.primaryColor),
-            padding: Padding.symmetric(horizontal: 35.px, vertical: 40.px)),
-        [_nameAndPosition()]);
+                offsetX: 0.px, offsetY: 5.px, color: AppColors.primaryColor)),
+        [_nameAndPosition(), _line(), _content()]);
   }
 
   Component _nameAndPosition() {
@@ -38,19 +39,19 @@ class MemberCard extends StatelessComponent {
           SizeBoxComponent(width: 20),
           div(
               styles: Styles(
-                  width: 100.percent,
-                  justifyContent: JustifyContent.spaceBetween,
                   display: Display.flex,
-                  alignItems: AlignItems.end,
-                  flexDirection: FlexDirection.column),
+                  width: 100.percent,
+                  flexDirection: FlexDirection.column,
+                  justifyContent: JustifyContent.spaceBetween,
+                  alignItems: AlignItems.end),
               [
                 _iconInstagram(),
                 div(
                     styles: Styles(
-                        width: 100.percent,
                         display: Display.flex,
-                        alignItems: AlignItems.start,
-                        flexDirection: FlexDirection.column),
+                        width: 100.percent,
+                        flexDirection: FlexDirection.column,
+                        alignItems: AlignItems.start),
                     [
                       div(
                           styles: Styles(
@@ -73,17 +74,37 @@ class MemberCard extends StatelessComponent {
   Component _iconInstagram() {
     return div(
         styles: Styles(
+            display: Display.flex,
             width: 34.px,
             height: 34.px,
-            display: Display.flex,
             radius: BorderRadius.circular(30.px),
-            alignItems: AlignItems.center,
             justifyContent: JustifyContent.center,
-            backgroundColor: AppColors.primaryColor,
+            alignItems: AlignItems.center,
             color: AppColors.greenPrimary,
             fontSize: 20.px,
+            fontWeight: FontWeight.bold,
             // padding: Padding.all(8.px),
-            fontWeight: FontWeight.bold),
+            backgroundColor: AppColors.primaryColor),
         [Text("in")]);
   }
+
+  Component _line() {
+    return div(
+        styles: Styles(
+            height: 1.px,
+            margin: Margin.symmetric(vertical: 28.px),
+            backgroundColor: AppColors.primaryColor),
+        []);
+  }
+
+  Component _content() {
+    return div(
+        styles: Styles(
+          fontSize: 18.px,
+          fontWeight: FontWeight.w400,
+        ),
+        [Text(content)]);
+  }
+
+
 }
