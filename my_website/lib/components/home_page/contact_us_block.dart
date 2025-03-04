@@ -20,12 +20,12 @@ class GenderSelectionState extends State<ContactUsBlock> {
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
         styles: Styles(
+            display: Display.flex,
             margin: Margin.symmetric(horizontal: 100.px),
             radius: BorderRadius.circular(45.px),
-            display: Display.flex,
             flexDirection: FlexDirection.row,
-            alignItems: AlignItems.center,
             justifyContent: JustifyContent.spaceBetween,
+            alignItems: AlignItems.center,
             backgroundColor: AppColors.backgroundWhite),
         [
           _detailComponent(),
@@ -102,15 +102,14 @@ class GenderSelectionState extends State<ContactUsBlock> {
             onInput: (e) => setState(() => messageValue = e ?? ''),
             styles: Styles(
               height: 170.px,
-              raw: {'resize': 'none'},
               padding: Padding.symmetric(horizontal: 30.px, vertical: 18.px),
+              border: Border(color: AppColors.primaryColor, width: 2.px),
               radius: BorderRadius.circular(14.px),
               color: AppColors.primaryColor,
-              border: Border(color: AppColors.primaryColor, width: 1.px),
               fontSize: 18.px,
               fontWeight: FontWeight.w400,
               backgroundColor: AppColors.white,
-              // resize: Resize.none, // Chặn resize nếu không muốn người dùng thay đổi kích thước
+              raw: {'resize': 'none'},
             ),
             readonly: false,
             required: true,

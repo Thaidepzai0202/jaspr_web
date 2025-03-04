@@ -19,6 +19,12 @@ class Images {
   static const String learnMoreGreenIcon = "images/learn_more_green_icon.svg";
   static const String memberTeam = "images/member_team.png";
   static const String imageContactUsCard = "images/image_contact_us_card.png";
+
+  //fb,tw,in
+  static const String twitterIcon = "images/twitter_icon.png";
+  static const String facebookIcon = "images/facebook_icon.png";
+  static const String instagramIcon = "images/instagram_icon.png";
+
 }
 
 class Icons {
